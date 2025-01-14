@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari LaFerrari</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+        <h1>Ferrari LaFerrari</h1>
+    </header>
+    <section class="container">
+        <div class="card">
+            <img src="ferrari-laferrari.jpg" alt="Ferrari LaFerrari">
+            <h2>About Ferrari LaFerrari</h2>
+            <p>The Ferrari LaFerrari is a marvel of modern engineering, combining hybrid technology with breathtaking performance. It represents the cutting edge of automotive innovation.</p>
+            <p>Price: $7,000,000</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 NikaCars. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .menu {
+            display: none; /* Hide the menu initially */
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columns */
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .menu button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        .menu button:hover {
+            opacity: 0.8;
+        }
+
+        #selected-color {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Assign colors to buttons */
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; color: black; }
+        .orange { background-color: orange; }
+        .purple { background-color: purple; }
+        .pink { background-color: pink; color: black; }
+        .brown { background-color: brown; }
+        .gray { background-color: gray; }
+        .black { background-color: black; }
+    </style>
+</head>
+<body>
+    <h1>Choose a Color</h1>
+    <button id="open-menu">Select a Color</button>
+    <div class="menu" id="color-menu">
+        <button class="red" onclick="chooseColor('Red')">Red</button>
+        <button class="blue" onclick="chooseColor('Blue')">Blue</button>
+        <button class="green" onclick="chooseColor('Green')">Green</button>
+        <button class="yellow" onclick="chooseColor('Yellow')">Yellow</button>
+        <button class="orange" onclick="chooseColor('Orange')">Orange</button>
+        <button class="purple" onclick="chooseColor('Purple')">Purple</button>
+        <button class="pink" onclick="chooseColor('Pink')">Pink</button>
+        <button class="brown" onclick="chooseColor('Brown')">Brown</button>
+        <button class="gray" onclick="chooseColor('Gray')">Gray</button>
+        <button class="black" onclick="chooseColor('Black')">Black</button>
+    </div>
+    <div id="selected-color"></div>
+
+    <script>
+        const menu = document.getElementById('color-menu');
+        const button = document.getElementById('open-menu');
+        const selectedColorDiv = document.getElementById('selected-color');
+
+        button.addEventListener('click', () => {
+            menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'grid' : 'none';
+        });
+
+        function chooseColor(color) {
+            selectedColorDiv.textContent = `You selected: ${color}`;
+            selectedColorDiv.style.color = color.toLowerCase();
+            menu.style.display = 'none'; // Hide menu after selection
+        }
+    </script>
+
+</body>
+</html

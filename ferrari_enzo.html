@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari Enzo</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 250px;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+        .menu button:hover {
+            opacity: 0.8;
+        }
+
+        #selected-color {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Assign colors to buttons */
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; color: black; }
+        .orange { background-color: orange; }
+        .purple { background-color: purple; }
+        .pink { background-color: pink; color: black; }
+        .brown { background-color: brown; }
+        .gray { background-color: gray; }
+        .black { background-color: black; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ferrari Enzo</h1>
+    </header>
+    <section class="container">
+        <div class="card">
+            <img src="ferrari-enzo.webp" alt="Ferrari Enzo">
+            <h2>About Ferrari Enzo</h2>
+            <p>The Ferrari Enzo is a supercar that was designed to push the boundaries of performance. Named after the company's founder, it represents the pinnacle of Ferrari engineering.</p>
+            <p>Price: $3,000,000</p>
+        </div>
+    </section>
+    <h1>Choose a Color</h1>
+    <button id="open-menu">Select a Color</button>
+    <div class="menu" id="color-menu">
+        <button class="red" onclick="chooseColor('Red')">Red</button>
+        <button class="blue" onclick="chooseColor('Blue')">Blue</button>
+        <button class="green" onclick="chooseColor('Green')">Green</button>
+        <button class="yellow" onclick="chooseColor('Yellow')">Yellow</button>
+        <button class="orange" onclick="chooseColor('Orange')">Orange</button>
+        <button class="purple" onclick="chooseColor('Purple')">Purple</button>
+        <button class="pink" onclick="chooseColor('Pink')">Pink</button>
+        <button class="brown" onclick="chooseColor('Brown')">Brown</button>
+        <button class="gray" onclick="chooseColor('Gray')">Gray</button>
+        <button class="black" onclick="chooseColor('Black')">Black</button>
+    </div>
+    <div id="selected-color"></div>
+    <footer>
+        <p>&copy; 2025 NikaCars. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menu = document.getElementById('color-menu');
+        const button = document.getElementById('open-menu');
+        const selectedColorDiv = document.getElementById('selected-color');
+
+        button.addEventListener('click', () => {
+            menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'grid' : 'none';
+        });
+
+        function chooseColor(color) {
+            selectedColorDiv.textContent = `You selected: ${color}`;
+            selectedColorDiv.style.color = color.toLowerCase();
+            menu.style.display = 'none'; // Hide menu after selection
+        }
+    </script>
+</body>
+</html>
